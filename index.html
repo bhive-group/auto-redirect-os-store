@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Store Redirect</title>
+  <script>
+    window.onload = function() {
+      // Get the user agent string
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Check if the device is iOS
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        // Redirect to the App Store
+        window.location.href = "https://apps.apple.com/in/app/bhive-workspace/id6463923684";
+      }
+      // Check if the device is Android
+      else if (/android/i.test(userAgent)) {
+        // Redirect to the Play Store
+        window.location.href = "https://play.google.com/store/apps/details?id=com.bhive.workspace";
+      }
+      // Otherwise do nothing and stay on the page
+    };
+  </script>
+</head>
+<body>
+  <h1>Choose Your Platform</h1>
+
+  <!-- Button to go to the App Store -->
+  <button onclick="window.location.href='https://apps.apple.com/in/app/bhive-workspace/id6463923684'">
+    Open in App Store
+  </button>
+
+  <!-- Button to go to the Play Store -->
+  <button onclick="window.location.href='https://play.google.com/store/apps/details?id=com.bhive.workspace'">
+    Open in Play Store
+  </button>
+</body>
+</html>
